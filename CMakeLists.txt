@@ -56,8 +56,22 @@ target_include_directories(unitree_sdk2 INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>)
 
+# 查找ROS包
+find_package(catkin REQUIRED COMPONENTS
+  tf
+  roscpp
+  sensor_msgs
+  geometry_msgs
+)
+
+# 包含ROS头文件路径
+include_directories(
+  ${catkin_INCLUDE_DIRS}
+)
+
 if (BUILD_EXAMPLES)
     add_subdirectory(example)
+
 endif ()
 
 ## Install the library
