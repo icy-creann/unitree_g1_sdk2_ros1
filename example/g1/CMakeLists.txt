@@ -1,0 +1,5 @@
+add_executable(g1_loco_client g1_loco_client.cpp)
+target_link_libraries(g1_loco_client unitree_sdk2)
+
+add_executable(g1_move_sub g1_move_sub.cpp)
+target_link_libraries(g1_move_sub unitree_sdk2)
